@@ -18,3 +18,6 @@ In order to get messages with the `@level=error`, do a docker pull of a non exis
 
 the error message should show up in the index after reload as we ingest all docker log messages.
 
+# moar data
+
+If you want more data you can instruct logstash to not only ingest new logs but also all previous docker logs. In order to activate this, edit `logstash/conf.d/input.conf` (see comments there), stop the elk cluster if you already started it (`docker-compose stop && docker-compose rm` (the `rm` is important)) and start the elk cluster again. This will spin up your CPU ;)
